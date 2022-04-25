@@ -4,6 +4,15 @@ import { Link } from "react-router-dom";
 import "../../styles/home.css";
 import { Context } from "../store/appContext"
 export const Card = () => {
+ const notduplicate = (item) => {
+      if(store.lessdata.includes(item)){
+        alert("this item is already added")
+        
+      }
+      else{
+        actions.thirdData(item)
+      }
+ }
     const {store,actions} = useContext(Context)
     console.log(store)
 	return(
@@ -22,7 +31,7 @@ export const Card = () => {
       </button>
 
      </Link>
-     <button onClick={() => actions.thirdData(item)} type="button" class="btn btn-warning">♥</button>
+     <button onClick={() => notduplicate(item)}  type="button" class="btn btn-warning">♥</button>
   </div>
 </div>
           )

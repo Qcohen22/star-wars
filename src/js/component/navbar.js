@@ -18,10 +18,19 @@ export const Navbar = () => {
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Dropdown button
   </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+  <ul  className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 	  {store.lessdata.map((item, index) => {
 		  return(
-    <><li><a class="dropdown-item" href="#">{item.name}</a></li></>
+    <><li className="dropdown-item" >
+		<Link to={"/details/"+item.uid} >
+      <button className="btn btn-primary"  onClick={() => actions.singleData(item.uid)}>
+      {item.name}
+
+      </button>
+
+     </Link>
+	 <button onClick={() => actions.Delete(index) } className="btn btn-danger">x</button>
+		</li></>
 		  )
 	  })}
   </ul>
