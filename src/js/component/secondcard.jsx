@@ -9,7 +9,7 @@ export const Newcard = () => {
     return(
       <>
       {store.moredata.result ? 
-        <div className="card mb-3"  style={{width: "540px"}}>
+        <div className="card mb-3"  style={{width: "1000px", margin:"0 auto"}}>
   <div className="row g-0">
     <div className="col-md-4">
       <img src={store.img + store.moredata.result.uid + ".jpg"} className="img-fluid rounded-start" alt="..."/>
@@ -21,6 +21,28 @@ export const Newcard = () => {
         <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
       </div>
     </div>
+  </div>
+  <div className="d-flex d-flex justify-content-evenly" >
+        <div>
+          <h4>eye-color</h4>
+          <p>{store.moredata.result.properties.eye_color}</p>
+        </div>
+        <div>
+          <h4>hair_color</h4>
+          <p>{store.moredata.result.properties.hair_color}</p>
+        </div>
+        <div>
+          <h4>Gender</h4>
+          <p>{store.moredata.result.properties.gender}</p>
+        </div>
+        <div>
+          <h4>year</h4>
+          <p>{store.moredata.result.properties.birth_year}</p>
+        </div>
+        <div>
+          <h4>height</h4>
+          <p>{store.moredata.result.properties.height}</p>
+        </div>
   </div>
 </div>
 :
